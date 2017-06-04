@@ -1,0 +1,99 @@
+---
+---
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+.top-level {
+    background-color: #fff;
+}
+
+.ja-header {
+    color: #444;
+    font-size: 35px;
+    width: 100%;
+    margin: 0px !important;
+    padding-top: calc(15vh - 35px + 3em);
+    padding-bottom: calc(15vh - 35px + 3em);
+    text-align: center;
+}
+
+.name {
+    font-weight: 500;
+    color: #37CAE1;
+}
+
+.first-line {
+    font-size: 70px;
+}
+
+.body-line {
+    font-size: 35px;
+}
+
+.screenshot-container {
+    text-align: center;
+    margin-top: -50px;
+    .screenshot {
+        transition: color .1s ease;
+        transition-property: color,background-color,box-shadow,transform;
+        transition-duration: .15s;  
+        @include box-shadow(0, 3px, 13px, rgba(0, 0, 0, 0.15));
+        width: 350px;
+        cursor: pointer;
+    }
+    .screenshot:hover {
+        @include box-shadow(0, 5px, 16px, rgba(0, 0, 0, 0.15));
+        width: 350px;
+        transform: translateY(-3px);
+    }
+}
+
+
+.proj-title {
+    color: #444;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.link {
+    color: #FF65B6;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.link:visited {
+    color: #FF65B6;
+}
+
+.proj-description {
+    color: #666;
+    font-size: 25px;
+    padding-top: 1em;
+    text-align: center;
+}
+
+.description-text {
+    margin: auto;
+    max-width: 400px !important;
+    margin-bottom: 4em;
+}
+
+body {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande";
+    margin:0px;
+    padding: 0px;
+    background-color: #F4F7F8 !important;
+}
