@@ -1,6 +1,22 @@
 ---
 ---
 
+// DEVICE LIST //
+$xs-min: "only screen and (min-width:none)";
+$xs-max: "only screen and (max-width:520px)";
+$xs-sm: "only screen (min-width: none) and (max-width:767px)";
+
+$sm-min: "only screen and (min-width:768px)";
+$sm-max: "only screen and (max-width:991px)";
+$sm-md: "only screen (min-width: 768px) and (max-width:991px)";
+
+$md-min: "only screen and (min-width:992px)";
+$md-max: "only screen and (max-width:1199px)";
+$md-lg: "only screen (min-width: 992px) and (max-width:1199px)";
+
+$lg-min: "only screen and (min-width:1200px)";
+$lg-max: "only screen and (max-width:none)";
+
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
     -webkit-box-shadow:inset $top $left $blur $color;
@@ -13,13 +29,28 @@
   }
 }
 
+.txt-xlg {
+    font-size: 70px;
+}
+
+.txt-lg {
+    font-size: 35px;
+}
+
+.txt-md {
+    font-size: 25px;
+}
+
+.txt-sm {
+    font-size: 18px;
+}
+
 .top-level {
     background-color: #fff;
 }
 
 .ja-header {
     color: #444;
-    font-size: 35px;
     width: 100%;
     margin: 0px !important;
     padding-top: calc(15vh - 35px + 3em);
@@ -30,14 +61,6 @@
 .name {
     font-weight: 500;
     color: #37CAE1;
-}
-
-.first-line {
-    font-size: 70px;
-}
-
-.body-line {
-    font-size: 35px;
 }
 
 .screenshot-container {
@@ -61,7 +84,6 @@
 
 .proj-title {
     color: #444;
-    font-size: 35px;
     text-align: center;
     padding-top: 1em;
 }
@@ -80,7 +102,6 @@
 
 .proj-description {
     color: #666;
-    font-size: 25px;
     padding-top: 1em;
     text-align: center;
 }
@@ -96,4 +117,18 @@ body {
     margin:0px;
     padding: 0px;
     background-color: #F4F7F8 !important;
+}
+
+@media #{$sm-max} { 
+    .txt-xlg {
+    font-size: 50px;
+    }
+
+    .txt-lg {
+        font-size: 25px;
+    }
+
+    .txt-md {
+        font-size: 20px;
+    }
 }
